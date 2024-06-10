@@ -7,12 +7,12 @@ import axios from 'axios';
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
 
 export const registerUser = async (userData) => {
-  const response = await axios.post(`${API_URL}/api/register`, userData); // Fixed endpoint
+  const response = await axios.post(`${API_URL}api/register`, userData); // Fixed endpoint
   return response.data;
 };
 
 export const loginUser = async (userData) => {
-  const response = await axios.post(`${API_URL}/api/login`, userData); // Fixed endpoint
+  const response = await axios.post(`${API_URL}api/login`, userData); // Fixed endpoint
   return response.data;
 };
 
@@ -23,7 +23,7 @@ export const getUserProfile = async () => {
   }
   
   try {
-    const response = await axios.get(`${API_URL}/api/users/getUserProfile`, {
+    const response = await axios.get(`${API_URL}api/users/getUserProfile`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -41,7 +41,7 @@ export const updateUserProfile = async (userData) => {
   }
 
   try {
-    const response = await axios.put(`${API_URL}/api/users/updateUserProfile/${userData._id}`, userData, {
+    const response = await axios.put(`${API_URL}api/users/updateUserProfile/${userData._id}`, userData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -59,7 +59,7 @@ export const deleteUserProfile = async (userId) => {
   }
 
   try {
-    const response = await axios.delete(`${API_URL}/api/users/deleteUser/${userId}`, {
+    const response = await axios.delete(`${API_URL}api/users/deleteUser/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
